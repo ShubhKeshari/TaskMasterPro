@@ -31,10 +31,10 @@ const File = sequelize.define("File", {
   },
 });
 
-File.belongsTo(Task, { foreignKey: "task_id" });
-Task.hasMany(File, { foreignKey: "task_id" });
+// File.belongsTo(Task, { foreignKey: "task_id" });
+// Task.hasMany(File, { foreignKey: "task_id" });
 
-File.belongsTo(Project, { foreignKey: "project_id" });
-Project.hasMany(File, { foreignKey: "project_id" });
+// File.belongsTo(Project, { foreignKey: "project_id" });
+// Project.hasMany(File, { foreignKey: "project_id" });
 
 module.exports = {File};

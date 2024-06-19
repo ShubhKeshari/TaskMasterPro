@@ -30,7 +30,7 @@ const Project = sequelize.define("Project", {
   },
 });
 
-Project.belongsTo(User, { foreignKey: "owner_id" });
-User.hasMany(Project, { foreignKey: "owner_id" });
+// Project.belongsTo(User, { foreignKey: "owner_id" });
+// User.hasMany(Project, { foreignKey: "owner_id" });
 
 module.exports = { Project };

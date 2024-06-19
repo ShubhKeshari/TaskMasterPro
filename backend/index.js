@@ -21,10 +21,8 @@ app.get("/", (req, res) => {
   }
 });
 
-sequelize.sync({ alter: false, force: false }).then(() => {
-  console.log("Database & tables created!");
-});
-
-app.listen(port, () => {
+app.listen(port, async () => {
+  await sequelize.sync();
+  console.log("All models were synchronized successfully.");
   console.log(`Sevrer is running on http://localhost:${port}`);
 });

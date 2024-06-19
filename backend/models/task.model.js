@@ -18,8 +18,20 @@ const Task = sequelize.define("Task", {
     allowNull: true,
   },
   status: {
-    type: DataTypes.STRING(50),
+    type: DataTypes.ENUM,
+    values: [
+      "pending",
+      "in_progress",
+      "completed",
+      "on_hold",
+      "cancelled",
+      "rejected",
+      "approved",
+      "due_today",
+      "overdue",
+    ],
     allowNull: false,
+    defaultValue: "pending",
   },
   deadline: {
     type: DataTypes.DATE,
@@ -43,10 +55,10 @@ const Task = sequelize.define("Task", {
   },
 });
 
-Task.belongsTo(User, { foreignKey: "assigned_to" });
-User.hasMany(Task, { foreignKey: "assigned_to" });
+// Task.belongsTo(User, { foreignKey: "assigned_to" });
+// User.hasMany(Task, { foreignKey: "assigned_to" });
 
-Task.belongsTo(Project, { foreignKey: "project_id" });
-Project.hasMany(Task, { foreignKey: "project_id" });
+// Task.belongsTo(Project, { foreignKey: "project_id" });
+// Project.hasMany(Task, { foreignKey: "project_id" });
 
 module.exports = { Task };
