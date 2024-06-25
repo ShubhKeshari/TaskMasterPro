@@ -2,7 +2,6 @@ const { DataTypes } = require("sequelize");
 const { sequelize } = require("../utils/db.config");
 
 const roles = {
-  ADMIN: "admin",
   MANAGER: "manager",
   TEAM_MEMBER: "team_member",
   STAKEHOLDER: "stakeholder",

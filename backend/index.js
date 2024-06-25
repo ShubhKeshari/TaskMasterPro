@@ -9,6 +9,10 @@ const { Task } = require("./models/task.model");
 const { File } = require("./models/file.model");
 const { Message } = require("./models/message.model");
 
+const { userRouter } = require("./routes/user.routes");
+const { taskRouter } = require("./routes/task.routes");
+const { projectRouter } = require("./routes/project.routes");
+
 app.use(express.json());
 app.use(cors());
 
@@ -20,6 +24,9 @@ app.get("/", (req, res) => {
     res.status(500).json({ error: true, message: `${error}` });
   }
 });
+app.use("/users", userRouter);
+app.use("/tasks", taskRouter);
+app.use("/projects", projectRouter);
 
 app.listen(port, async () => {
   await sequelize.sync();
