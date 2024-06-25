@@ -1,12 +1,16 @@
-import { useState } from 'react'
-
+import React from "react";
+import { AllRoutes } from "./routes/AllRoutes";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
     <>
-      <div>TaskMasterPro</div>
+      <Navbar />
+      <AllRoutes />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
