@@ -1,23 +1,31 @@
-import React from 'react';
+import React from "react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Image
+} from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
+import Error404 from "../assets/error.webp";
 
 const Error = () => {
   return (
-    <Flex h={'100vh'} justifyContent={'center'} alignItems={'center'}>
-      <Box>
-        <VStack>
-          <Heading fontFamily={'Futura Std'}>404</Heading>
-          <Heading fontSize={'30px'} fontFamily={'Futura Std'}>UH OH! You are lost.</Heading>
-          <Text textAlign={'center'} fontFamily={'Futura Std'}>The page you are looking for does not exist. How you got here is a mystery. But you can click on the button below to go back to the homepage.</Text>
-          <NavLink to={'/'}>
-            <Button colorScheme='gray'><ArrowBackIcon/> Go back to Homepage </Button>
-          </NavLink>
-        </VStack>
-      </Box>
+    <Flex
+      direction={"column"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      gap={"20px"}
+      mt={24}
+      mb={16}
+    >
+      <Image src={Error404} w={{base:"90%",md:"45%"}} />
+      <NavLink to={"/"}>
+        <Button colorScheme="gray">
+          <ArrowBackIcon /> Go back to Homepage
+        </Button>
+      </NavLink>
     </Flex>
   );
-}
+};
 
-export {Error};
+export { Error };
