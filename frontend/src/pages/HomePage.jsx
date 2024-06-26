@@ -30,7 +30,7 @@ const HomePage = () => {
               Your solution for efficient project management.
             </Text>
             <Button
-              colorScheme="teal"
+              colorScheme="green"
               variant="solid"
               size="lg"
               onClick={() => (window.location.href = "/login")}
@@ -110,7 +110,7 @@ const HomePage = () => {
           </Box>
 
           <Button
-            colorScheme="teal"
+            colorScheme="green"
             variant="solid"
             size="lg"
             onClick={() => (window.location.href = "/login")}

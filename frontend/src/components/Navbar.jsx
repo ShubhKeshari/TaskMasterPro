@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <Box
-      bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(0, 0, 0, 0.8)")}
+      bg={useColorModeValue("rgba(255, 255, 255,0.6)", "rgba(0, 0, 0, 0.8)")}
       px={4}
       py={2}
       color="black"
@@ -136,13 +136,14 @@ const Navbar = () => {
               size={"sm"}
               _hover={{ bg: useColorModeValue("gray.400", "gray.600") }}
               ml={4}
+              onClick={onOpen}
             >
-              Login
+              Login/Register
             </Button>
           )}
         </Flex>
       </Flex>
-
+     
       {isOpen && (
         <Box pb={4} display={{ md: "none" }}>
           <Stack as={"nav"} spacing={4}>
